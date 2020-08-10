@@ -60,17 +60,33 @@ On pressing the rotary encoder centre button
 ## General Operation
 When the machine first turned on, the current boiler temperature is displayed with the target boiler temperature displayed below that, below again is a notification that states if the machine is up to temperature or not. The heater PID runs independently even if the user is in the setup menu, the PID will continue to control the heater if the user changes the target temperature on the exit of the menu the Arduino is reset allowing the new target temperature to be saved in the EEPROM for the PID to utilise.
 
-When the make coffee switch is turned on the display changes to making espresso, with time elapsed time displayed below and the current boiler temperature.
+When the make coffee switch is turned on the display changes to "making espresso", with time elapsed time displayed below and the current boiler temperature.
 
-When the stream button is switched on the display changes to steaming in progress, with the stream boiler temperature displayed and blow the stream target temperature, followed by machine status warning of ready or heating.
+When the stream button is switched on the display changes to "steaming in progress", with the stream boiler temperature displayed and blow the stream target temperature, followed by machine status warning of ready or heating.
+
 If both steam and coffee buttons are pressed, the display will change to dispensing hot water. Hot water will then be routed out the steam wand. 
 
 ## Cleaning programs
 * The Backflush program, 
-To use the machine must be up to temperature and a blank dish placed in the portafilter, when activated the screen displays please fill the portafilter with detergent and press start, the machine will run the pump to the preset time then stop, backflush pause is displayed, after the allotted time the pump will run again then stop this will happen 10 times, after 10 times, empty portafilter of detergent click to continue with flush will be displayed. the pump will run and stop another 10 times. After the display will say backflush finished then reset the machine back to the standard coffee boiler temperature screen.
+To use the machine must be up to temperature and a blank dish placed in the portafilter, when activated the screen displays "please fill the portafilter with detergent and press start", the machine will run the pump to the preset time then stop, backflush pause is displayed, after the allotted time the pump will run again then stop this will happen 10 times, after 10 times, "empty portafilter of detergent click to continue with flush" will be displayed, the pump will run and stop another 10 times. After the display will say "backflush finished" then reset the machine back to the standard coffee boiler temperature screen.
 
 * The Decalcifire program,
 To use the machine must be up to temperature, warm water with descaler must be placed into the water tank, when activated the screen will display, "Fill water tank add descaler then press button to start", the display will change to "cleaning started", the pump will run for 30 seconds then stop. The screen will display "please empty drip tray"  while a countdown timer counts down from 5 minutes, after the allotted time the pump will run for a further 30 seconds while the screen says "Decalcifier solution second flush", the machine will once again pause and the screen will display, "Empty tank/Drip tray and add fresh water, click to begin the last cycle". "Freshwater Flush will be displayed and the pump will run for 1 minute followed by the screen display "Cleaning complete please wait to exit", a delay of 2 seconds is called and the watchdog will reset the machine to the standard coffee boiler temperature screen.
+
+#
+
+### Modifications
+Apart from the PID, I also changed the brew plate to a brass version to help with temperature dispersal and stabilisation, the shower plate was also upgraded and the group head seal was also changed for the neoprene version which will outlast the rubber version by quite some time. The steam wand was changed for the Rancilio Silvas version as the original Pannarello Steam Tube is just pure rubbish. 
+
+<div align="center">
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/grouphead.jpg" alt="group" width="45%"/><img src="https://github.com/jonathanw82/Coffee/blob/master/images/wand.jpg" alt="wand" width="45%"/> </div>
+
+
+I also Installed a Chasis mount Pressure Guage that dives quite an accurate display, unfortunately, due to the facet pump the needle jumps about but it is still a good ballpark display and I know I'm getting a good 9 bar brew pressure.
+
+<div align="center">
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/hole.jpg" alt="hole" width="45%"/><img
+src="https://github.com/jonathanw82/Coffee/blob/master/images/guage.jpg" alt="guage" width="45%"/> </div>
 
 #
 
