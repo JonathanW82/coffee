@@ -56,7 +56,14 @@ On pressing the rotary encoder centre button
 * Exit Setup.
 * On pressing and holding the rotary encoder centre button the machine will reset.
 
+### Decals
+The decals have changed somewhat during creation, at first we had buttons than moved over to utilise the rotary encoder
 
+#
+<div align="center">
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/coffee decal.jpg" alt="decal1" width="45%"/><img src="https://github.com/jonathanw82/Coffee/blob/master/images/coffee decal ver2.jpg" alt="decal2" width="45%"/> </div>
+
+#
 
 ### Nice to Have
 * Glycerine filled pressure gauge for stable pressure readings.
