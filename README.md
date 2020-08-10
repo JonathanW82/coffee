@@ -91,11 +91,7 @@ Apart from the PID, I also changed the brew plate to a brass version to help wit
 <img src="https://github.com/jonathanw82/Coffee/blob/master/images/grouphead.jpg" alt="group" width="45%"/>
 <img src="https://github.com/jonathanw82/Coffee/blob/master/images/wand.jpg" alt="wand" width="45%"/></div>
 
-
-
-I also Installed a Chasis mount Pressure Guage that dives quite an accurate display, unfortunately, due to the facet pump the needle jumps about but it is still a good ballpark display and I know I'm getting a good 9 bar brew pressure.
-
-
+I also Installed a chasis mount Pressure Guage that gives quite an accurate display, unfortunately, due to the facet pump the needle jumps about but it is still a good ballpark display and I know I'm getting a good 9 bar brew pressure.
 
 <div align="center">
 <img src="https://github.com/jonathanw82/Coffee/blob/master/images/hole.jpg" alt="hole" width="45%"/><img
