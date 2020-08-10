@@ -7,7 +7,8 @@
 # Gaggia Classic Espresso Machine Upgrade.
 These files make up a complete program to run on an Arduino with a rotary encoder and a solid-state relay,
 The menu system enables you to change target temperatures and access cleaning programs, while the PID controls the heater 
-whether to heat coffee or produce steam!
+whether to heat coffee or produce steam. The program is based on the barebones PID for espresso [here](https://playground.arduino.cc/Main/BarebonesPIDForEspresso/) and inspiration for the menu system was loosely taken from the Arduino Rotary Encoder Menu [here](http://educ8s.tv/arduino-rotary-encoder-menu/)
+
 
 #### The users goals of this system are:
 * An easy to navigate menu.
@@ -54,7 +55,24 @@ On pressing the rotary encoder centre button
 * Set Backflush Pause/Start duration on click, will give a menu allowing selection of 0-9 seconds.
 * Software Version on click, will display the software version.
 * Exit Setup.
-* On pressing and holding the rotary encoder centre button the machine will reset.
+* If the centre button on the encoder is held down it will cause the arduino to rest by kicking the watch dog, this can be done regardless of being in setup mode.
+
+##
+When the machine first turned on, the current boiler temperature is displayed with the target boiler temperature displayed below that, below again is a notification that states if the machine is up to temperature or not. The heater PID runs independently even if the user is in the setup menu, the PID will continue to control the heater if the user changes the target temperature on the exit of the menu the Arduino is reset allowing the new target temperature to be saved in the EEPROM for the PID to utilise.
+
+When the make coffee switch is turned on the display changes to making espresso, with time elapsed time displayed below and the current boiler temperature.
+
+When the stream button is switched on the display changes to steaming in progress, with the stream boiler temperature displayed and blow the stream target temperature, followed by machine status warning of ready or heating.
+If both steam and coffee buttons are pressed, the display will change to dispensing hot water. Hot water will then be routed out the steam wand. 
+
+## Cleaning programs
+* The Backflush program, 
+To use the machine must be up to temperature and a blank dish placed in the portafilter, when activated the screen displays please fill the portafilter with detergent and press start, the machine will run the pump to the preset time then stop, backflush pause is displayed, after the allotted time the pump will run again then stop this will happen 10 times, after 10 times, empty portafilter of detergent click to continue with flush will be displayed. the pump will run and stop another 10 times. After the display will say backflush finished then reset the machine back to the standard coffee boiler temperature screen.
+
+* The Decalcifire program,
+To use the machine must be up to temperature, warm water with descaler must be placed into the water tank, when activated the screen will display, "Fill water tank add descaler then press button to start", the display will change to "cleaning started", the pump will run for 30 seconds then stop. The screen will display "please empty drip tray"  while a countdown timer counts down from 5 minutes, after the allotted time the pump will run for a further 30 seconds while the screen says "Decalcifier solution second flush", the machine will once again pause and the screen will display, "Empty tank/Drip tray and add fresh water, click to begin the last cycle". "Freshwater Flush will be displayed and the pump will run for 1 minute followed by the screen display "Cleaning complete please wait to exit", a delay of 2 seconds is called and the watchdog will reset the machine to the standard coffee boiler temperature screen.
+
+#
 
 ### Decals
 The decals have changed somewhat during creation, at first we had buttons than moved over to utilise the rotary encoder
@@ -67,7 +85,8 @@ The decals have changed somewhat during creation, at first we had buttons than m
 
 ### Nice to Have
 * Glycerine filled pressure gauge for stable pressure readings.
-* Higher maximum temperature, water temp sensor.(Current model only 150c)
+* Higher maximum temperature, water temp sensor.(Current model only 150c.
+* Flow meter to dispence exact abounds of water.
 
 
 ### Credits:
