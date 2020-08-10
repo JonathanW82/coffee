@@ -4,7 +4,8 @@
  </h1>
  
 
-# Gaggia Classic Espresso Machine Upgrade.
+# Coffee
+## Gaggia Classic Espresso Machine Upgrade.
 These files make up a complete program to run on an Arduino with a rotary encoder and a solid-state relay,
 The menu system enables you to change target temperatures and access cleaning programs, while the PID controls the heater 
 whether to heat coffee or produce steam. The program is based on the barebones PID for espresso [here](https://playground.arduino.cc/Main/BarebonesPIDForEspresso/) and inspiration for the menu system was loosely taken from the Arduino Rotary Encoder Menu [here](http://educ8s.tv/arduino-rotary-encoder-menu/)
@@ -149,4 +150,4 @@ https://playground.arduino.cc/Main/BarebonesPIDForEspresso/
 
 All other images are my own.
 
-[Back_to_top](#h1)
+[Back_to_top](#Coffee)
