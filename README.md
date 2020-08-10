@@ -7,7 +7,7 @@ whether to heat coffee or produce steam!
 
 
 <h1 align="center">
-   <img src="" alt="Coffee"/>
+   <img src="https://github.com/jonathanw82/Coffee/blob/master/images/repoimage.jpg" alt="Coffee"/>
  </h1>
  
 ## Coffee
