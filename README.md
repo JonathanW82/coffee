@@ -29,6 +29,12 @@ whether to heat coffee or produce steam. The program is based on the barebones P
 * built-in relays for semiautomation.
 * Easy to user cleaning programs.
   
+  
+### Nice to have
+* Glycerine filled pressure gauge for stable pressure readings.
+* Higher maximum temperature, water temp sensor.(Current model only 150c.
+* Flow meter to dispence exact abounds of water.
+ 
  
 ## Parts:
 * 1x Gaggia Classic pre 2009 with 3 way valve.
@@ -57,6 +63,7 @@ On pressing the rotary encoder centre button
 * Exit Setup.
 * If the centre button on the encoder is held down it will cause the arduino to rest by kicking the watch dog, this can be done regardless of being in setup mode.
 
+
 ## General Operation
 When the machine first turned on, the current boiler temperature is displayed with the target boiler temperature displayed below that, below again is a notification that states if the machine is up to temperature or not. The heater PID runs independently even if the user is in the setup menu, the PID will continue to control the heater if the user changes the target temperature on the exit of the menu the Arduino is reset allowing the new target temperature to be saved in the EEPROM for the PID to utilise.
 
@@ -65,6 +72,7 @@ When the make coffee switch is turned on the display changes to "making espresso
 When the stream button is switched on the display changes to "steaming in progress", with the stream boiler temperature displayed and blow the stream target temperature, followed by machine status warning of ready or heating.
 
 If both steam and coffee buttons are pressed, the display will change to dispensing hot water. Hot water will then be routed out the steam wand. 
+
 
 ## Cleaning programs
 * The Backflush program, 
@@ -75,38 +83,37 @@ To use the machine must be up to temperature, warm water with descaler must be p
 
 #
 
-### Modifications
+## Modifications
 Apart from the PID, I also changed the brew plate to a brass version to help with temperature dispersal and stabilisation, the shower plate was also upgraded and the group head seal was also changed for the neoprene version which will outlast the rubber version by quite some time. The steam wand was changed for the Rancilio Silvas version as the original Pannarello Steam Tube is just pure rubbish. 
 
 
 <div align="center">
-<img src="https://github.com/jonathanw82/Coffee/blob/master/images/grouphead.jpg" alt="group" width="45%"/><img src="https://github.com/jonathanw82/Coffee/blob/master/images/wand.jpg" alt="wand" width="45%"/> </div>
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/grouphead.jpg" alt="group" width="45%"/>
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/wand.jpg" alt="wand" width="45%"/></div>
+
 
 
 I also Installed a Chasis mount Pressure Guage that dives quite an accurate display, unfortunately, due to the facet pump the needle jumps about but it is still a good ballpark display and I know I'm getting a good 9 bar brew pressure.
 
 
+
 <div align="center">
 <img src="https://github.com/jonathanw82/Coffee/blob/master/images/hole.jpg" alt="hole" width="45%"/><img
-src="https://github.com/jonathanw82/Coffee/blob/master/images/guage.jpg" alt="guage" width="45%"/>
-<img src="https://github.com/jonathanw82/Coffee/blob/master/images/control.jpg" alt="control" width="45%"/></div>
+src="https://github.com/jonathanw82/Coffee/blob/master/images/guage.jpg" alt="guage" width="45%"/></div>
 
 #
 
 ### Decals
 The decals have changed somewhat during creation, at first we had buttons than moved over to utilise the rotary encoder
 
-#
 
 <div align="center">
-<img src="https://github.com/jonathanw82/Coffee/blob/master/images/coffee decal.jpg" alt="decal1" width="45%"/><img src="https://github.com/jonathanw82/Coffee/blob/master/images/coffee decal ver2.jpg" alt="decal2" width="45%"/> </div>
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/coffee decal.jpg" alt="decal1" width="45%"/>
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/coffee decal ver2.jpg" alt="decal2" width="45%"/>
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/control.jpg" alt="control" width="45%"/></div>
 
 #
 
-### Nice to have
-* Glycerine filled pressure gauge for stable pressure readings.
-* Higher maximum temperature, water temp sensor.(Current model only 150c.
-* Flow meter to dispence exact abounds of water.
 
 ### When all is said and done this machine pulls a decent cup of coffee
 Thanks to the Gaggia Classic having a commercial 85mm portafilter an 18-gram (double) basket my favourite coffee recipes work well.
@@ -125,10 +132,10 @@ My favourite Decaffeinated coffee has to be Extract Coffee, SUGARCANE DECAF ESPR
 
 Both of these coffees lend themselves well to the same  2-1 brew ratio,
 * Nice hot machine/group head.
-* Water temperature 97c.
+* Water temperature 96-97c.
 * 9 bar of brew pressure.
 * 18 grams of fine ground on-demand coffee.
-* 36grams in the cup from a 26-30 second brew time.
+* 36 grams in the cup from a 26-30 second brew time.
 
 
 ### Credits:
