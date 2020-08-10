@@ -78,15 +78,18 @@ To use the machine must be up to temperature, warm water with descaler must be p
 ### Modifications
 Apart from the PID, I also changed the brew plate to a brass version to help with temperature dispersal and stabilisation, the shower plate was also upgraded and the group head seal was also changed for the neoprene version which will outlast the rubber version by quite some time. The steam wand was changed for the Rancilio Silvas version as the original Pannarello Steam Tube is just pure rubbish. 
 
+
 <div align="center">
 <img src="https://github.com/jonathanw82/Coffee/blob/master/images/grouphead.jpg" alt="group" width="45%"/><img src="https://github.com/jonathanw82/Coffee/blob/master/images/wand.jpg" alt="wand" width="45%"/> </div>
 
 
 I also Installed a Chasis mount Pressure Guage that dives quite an accurate display, unfortunately, due to the facet pump the needle jumps about but it is still a good ballpark display and I know I'm getting a good 9 bar brew pressure.
 
+
 <div align="center">
 <img src="https://github.com/jonathanw82/Coffee/blob/master/images/hole.jpg" alt="hole" width="45%"/><img
-src="https://github.com/jonathanw82/Coffee/blob/master/images/guage.jpg" alt="guage" width="45%"/> </div>
+src="https://github.com/jonathanw82/Coffee/blob/master/images/guage.jpg" alt="guage" width="45%"/>
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/control.jpg" alt="control" width="45%"/></div>
 
 #
 
@@ -94,15 +97,38 @@ src="https://github.com/jonathanw82/Coffee/blob/master/images/guage.jpg" alt="gu
 The decals have changed somewhat during creation, at first we had buttons than moved over to utilise the rotary encoder
 
 #
+
 <div align="center">
 <img src="https://github.com/jonathanw82/Coffee/blob/master/images/coffee decal.jpg" alt="decal1" width="45%"/><img src="https://github.com/jonathanw82/Coffee/blob/master/images/coffee decal ver2.jpg" alt="decal2" width="45%"/> </div>
 
 #
 
-### Nice to Have
+### Nice to have
 * Glycerine filled pressure gauge for stable pressure readings.
 * Higher maximum temperature, water temp sensor.(Current model only 150c.
 * Flow meter to dispence exact abounds of water.
+
+### When all is said and done this machine pulls a decent cup of coffee
+Thanks to the Gaggia Classic having a commercial 85mm portafilter an 18-gram (double) basket my favourite coffee recipes work well.
+
+<div align="center">
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/shot.jpg" alt="shot" width="45%"/>
+<img src="https://github.com/jonathanw82/Coffee/blob/master/images/milk.jpg" alt="milk" width="45%"/></div>
+
+#
+
+### My persoanl favorite recipres
+
+My favourite caffeinated coffee has to be Wogan Coffee, Riposo [here](https://wogancoffee.com/product/riposo/) I just love the chocolaty notes this coffee gives as an espresso and a fantastic price.
+
+My favourite Decaffeinated coffee has to be Extract Coffee, SUGARCANE DECAF ESPRESSO [here](https://extractcoffee.co.uk/shop/coffee/hero/sugarcane-decaf-espresso-1kg/) It's just a good satisfying cup!
+
+Both of these coffees lend themselves well to the same  2-1 brew ratio,
+* Nice hot machine/group head.
+* Water temperature 97c.
+* 9 bar of brew pressure.
+* 18 grams of fine ground on-demand coffee.
+* 36grams in the cup from a 26-30 second brew time.
 
 
 ### Credits:
