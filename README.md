@@ -5,8 +5,7 @@
  
 
 # Gaggia Classic Espresso Machine Upgrade.
-
-These files make up a complete program to run on an Arduino with a rotary encoder and a solid-state relay!
+These files make up a complete program to run on an Arduino with a rotary encoder and a solid-state relay,
 The menu system enables you to change target temperatures and access cleaning programs, while the PID controls the heater 
 whether to heat coffee or produce steam!
 
@@ -40,21 +39,28 @@ whether to heat coffee or produce steam!
 * 1x 5v 30amp Relay [here](https://robotdyn.com/relay-module-1-relay-5v-30a.html)
 * 1x Crydom 25 A rms Solid State Relay, Zero Cross, Surface Mount [here](https://uk.rs-online.com/web/p/solid-state-relays/0346918/)
 * 1x 240vac to 5vdc 3amp psu [here](https://uk.farnell.com/mean-well/rs-15-5/power-supply-ac-dc-5v-3a/dp/2816008?gclid=CjwKCAjw4MP5BRBtEiwASfwALzykFUpy0D1NfGwB9AtFk6ge9z51hKcsFSTC2TFxDH8aA4QST4EspxoCu5AQAvD_BwE&gross_price=true&mckv=sYdHUosbD_dc|pcrid|432101776060|plid||kword||match||slid||product|2816008|pgrid|104413864510|ptaid|pla-903929785098|&CMP=KNC-GUK-SHOPPING-CIRCUIT-PROTECTION-NEWSTRUCTURE-Test113-MarinBidding)
-
+* 1x Upgraded Brass brew plate [here](https://www.theespressoshop.co.uk/en/Gaggia-Brass-Shower-Plate-Holder-%C3%B8-57x14mm---WGA16G1002/m-1976.aspx)
+* 1x Chasis mount Pressure Guage 0-16bar [here](https://www.mrbean2cup.co.uk/vibiemme-manometer-0-16-bar)
+* 1x Pre 2015 Steam Wand conversion [here](https://www.theespressoshop.co.uk/en/GB/Gaggia-Classic-pre-2015-Steam-Tube-Conversion-Kit---10049046/m-1971.aspx?PartnerID=22&utm_source=google&utm_medium=shopping&utm_campaign=UnitedKingdom&gclid=CjwKCAjw4MP5BRBtEiwASfwAL_4M7cJEe2LzkQFlZVfYTnMWm9F29JhH0SmJHmF0dWXiy117YAxrkxoCV5QQAvD_BwE)
 
 
 ### Setup program flow:
 On pressing the rotary encoder centre button
 * Cleaning and setup.
-* Coffee Temp target.
-* Steam Temp target.
-* Backflush Clean.
-* Boiler Descale.
-* Set Backflush Pause/Start duration.
-* Software Version.
-* Exit Setup
+* Coffee Temp target on click, will give a menu allowing selection of 0-125c via rotating the rotary encoder and on click will save the selection.
+* Steam Temp target on click, will give a menu allowing selection of 0-140c via rotating the rotary encoder and on click will save the selection.
+* Backflush Clean on click, will start a cleaning program.
+* Boiler descale on click will start the descaling program.
+* Set Backflush Pause/Start duration on click, will give a menu allowing selection of 0-9 seconds.
+* Software Version on click, will display the software version.
+* Exit Setup.
+* On pressing and holding the rotary encoder centre button the machine will reset.
 
 
+
+### Nice to Have
+* Glycerine filled pressure gauge for stable pressure readings.
+* Higher maximum temperature, water temp sensor.(Current model only 150c)
 
 
 ### Credits:
@@ -72,4 +78,4 @@ https://playground.arduino.cc/Main/BarebonesPIDForEspresso/
 
 All other images are my own.
 
-[Back_to_top](#Hydroponics)
+[Back_to_top](#Gaggia)
