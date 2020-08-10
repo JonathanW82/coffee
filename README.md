@@ -57,7 +57,7 @@ On pressing the rotary encoder centre button
 * Exit Setup.
 * If the centre button on the encoder is held down it will cause the arduino to rest by kicking the watch dog, this can be done regardless of being in setup mode.
 
-##
+## General Operation
 When the machine first turned on, the current boiler temperature is displayed with the target boiler temperature displayed below that, below again is a notification that states if the machine is up to temperature or not. The heater PID runs independently even if the user is in the setup menu, the PID will continue to control the heater if the user changes the target temperature on the exit of the menu the Arduino is reset allowing the new target temperature to be saved in the EEPROM for the PID to utilise.
 
 When the make coffee switch is turned on the display changes to making espresso, with time elapsed time displayed below and the current boiler temperature.
