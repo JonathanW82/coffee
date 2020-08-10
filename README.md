@@ -1,51 +1,58 @@
-# Gaggia Classic Espresso Machine Upgrade.
-
-These files make up a complete program to run on an arduino with a rotery encoder and a solid state relay!
-The menu system enables you to change target temperatures and access cleaning programs, while the pid controlls the heater 
-whether to heat coffee or produce steam!
-
-
 
 <h1 align="center">
    <img src="https://github.com/jonathanw82/Coffee/blob/master/images/repoimage.jpg" alt="Coffee"/>
  </h1>
  
-## Coffee
 
+# Gaggia Classic Espresso Machine Upgrade.
 
+These files make up a complete program to run on an Arduino with a rotary encoder and a solid-state relay!
+The menu system enables you to change target temperatures and access cleaning programs, while the PID controls the heater 
+whether to heat coffee or produce steam!
 
 #### The users goals of this system are:
-* An easy to navigate menu
-* Low power consumption
-* Zero landfill
-* Create great food fast
+* An easy to navigate menu.
+* Low power consumption.
+* More features.
+* Create great Coffee Fast.
 
 
 #### I think this system gives this to the user because:
 * The rotery encoder is easy to use with one button click.
-* The display cycles through current realtime data such as temperature and humidity.
-* The entire system only takes 210 watts max.
-* The system can user multiple types of hydroponic platforms such as, Deep Water Culture, Nutrient Film Technique, Ebb and Flow etc.
-* Due to the use of pool noodles, jiffy's, netcups, clay pebbles and coco, there is no rockwool so zero landfill.
+* The display gives realtime data such as water temperature.
+* The system has built-in semiautomatic cleaning programs such as backflush and descale.
 
  
  ## Features:
-* Rotery encoder for navigation
-* Lcd display for easy and real time data
+* Rotery encoder for navigation.
+* Lcd display for real time data.
+* built-in relays for semiautomation.
+* Easy to user cleaning programs.
   
  
 ## Parts:
-* 1x Arduino Uno (Rev3) [here](https://store.arduino.cc/arduino-uno-rev3)
-* 3x DS18B20 Water temp sensors [here](https://www.cricklewoodelectronics.com/Waterproof-Digital-Temperature-Probe-for-Arduino-DS18B20.html) Unfortunatly there are not the ones in use currently.
+* 1x Gaggia Classic pre 2009 with 3 way valve.
+* 1x Arduino Nano flashed with Uno firmware [here](https://uk.rs-online.com/web/p/processor-microcontroller-development-kits/1927586?cm_mmc=UK-PLA-DS3A-_-google-_-CSS_UK_EN_Semiconductors_Whoop-_-Processor+%26+Microcontroller+Development+Kits_Whoop-_-1927586&matchtype=&aud-827186183886:pla-365806887317&gclid=CjwKCAjw4MP5BRBtEiwASfwAL1V2_ZPV5CFIHVJwqMWt440qj7niZnY0ZLb_qy5z4QArddATyjpiUBoCdTcQAvD_BwE&gclsrc=aw.ds)
+* 2x Arduino 240V 220V AC Mains Sensor Opto Isolator Optocoupler 5V 3.3V 1 Channel NN015 [here](https://webshop2you.com/nl/product/arduino-240v-220v-ac-mains-sensor-opto-isolator-optocoupler-5v-3-3v-1-channel-nn015/)
+* 1x TSIC 306 temperature sensor [here](https://uk.rs-online.com/web/p/temperature-sensors-humidity-sensors/1218022?cm_mmc=UK-PLA-DS3A-_-google-_-CSS_UK_EN_Semiconductors_Whoop-_-Temperature+Sensors+%26+Humidity+Sensors_Whoop-_-1218022&matchtype=&pla-304991652191&gclid=CjwKCAjw4MP5BRBtEiwASfwAL1Mm6vmGNY1QsjenYBxqMryW4MPXaiZl-vVgC9BdH6MISGYiW1tLMRoCfooQAvD_BwE&gclsrc=aw.ds)
 * 1x KY-040 Rotery Encoder [here](https://www.cricklewoodelectronics.com/Rotary-encoder-module-for-Arduino-KY-040.html?gclid=EAIaIQobChMIybWK-_Pl6QIVS7DtCh2XhAvKEAQYAyABEgKdBPD_BwE) 
-* 1x Lcd 1602i2c Display [here](https://create.arduino.cc/projecthub/Oniichan_is_ded/lcd-i2c-tutorial-664e5a)
+* 1x Lcd 2004i2c Display [here](https://www.q26.co.uk/lcd-i2c-display-1602-or-2004-blue-on-white-ideal-for-arduino-or-raspberry-pi)
 * 1x 5v 30amp Relay [here](https://robotdyn.com/relay-module-1-relay-5v-30a.html)
+* 1x Crydom 25 A rms Solid State Relay, Zero Cross, Surface Mount [here](https://uk.rs-online.com/web/p/solid-state-relays/0346918/)
+* 1x 240vac to 5vdc 3amp psu [here](https://uk.farnell.com/mean-well/rs-15-5/power-supply-ac-dc-5v-3a/dp/2816008?gclid=CjwKCAjw4MP5BRBtEiwASfwALzykFUpy0D1NfGwB9AtFk6ge9z51hKcsFSTC2TFxDH8aA4QST4EspxoCu5AQAvD_BwE&gross_price=true&mckv=sYdHUosbD_dc|pcrid|432101776060|plid||kword||match||slid||product|2816008|pgrid|104413864510|ptaid|pla-903929785098|&CMP=KNC-GUK-SHOPPING-CIRCUIT-PROTECTION-NEWSTRUCTURE-Test113-MarinBidding)
 
 
 
 ### Setup program flow:
 On pressing the rotary encoder centre button
-
+* Cleaning and setup.
+* Coffee Temp target.
+* Steam Temp target.
+* Backflush Clean.
+* Boiler Descale.
+* Set Backflush Pause/Start duration.
+* Software Version.
+* Exit Setup
 
 
 
