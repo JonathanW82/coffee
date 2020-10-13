@@ -121,7 +121,7 @@ Thanks to the Gaggia Classic having a commercial 85mm portafilter an 18-gram (do
 
 #
 
-### My persoanl favorite recipres
+### My persoanl favorite recipes
 
 My favourite caffeinated coffee has to be Wogan Coffee, Riposo [here](https://wogancoffee.com/product/riposo/) I just love the chocolaty notes this coffee gives as an espresso and a fantastic price.
 
