@@ -33,8 +33,8 @@ whether to heat coffee or produce steam. The program is based on the barebones P
   
 ### Nice to have
 * Glycerine filled pressure gauge for stable pressure readings.
-* Higher maximum temperature, water temp sensor.(Current model only 150c.
-* Flow meter to dispence exact abounds of water.
+* Higher maximum temperature, water temp sensor.(Current model only 150c)
+* Flow meter to dispence exact amounts of water.
  
  
 ## Parts:
