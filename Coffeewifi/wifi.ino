@@ -5,7 +5,7 @@ bool wifi() {
   }
 
   static int isWifiConnectedCounter = 0;
-  static float wifi_connect_timer = 0;
+  static unsigned long wifi_connect_timer = 0;
 
   // check for the WiFi module:
   if (WiFi.status() == WL_NO_MODULE) {

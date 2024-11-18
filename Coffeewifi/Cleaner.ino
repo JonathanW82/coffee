@@ -11,7 +11,7 @@ void boiler_decalcifier(){
   cleaning_program_running = true;
   pinMode (coffee_start_button, OUTPUT);                                    // sets coffee start button to an output as the relay that controlls cleaning programs is connected to the same line so it can cause program errors
 
-  static float decal_state_timer = 0;
+  static unsigned long decal_state_timer = 0;
 
   switch(current_boiler_decalcifier_state){
 

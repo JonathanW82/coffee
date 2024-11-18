@@ -8,7 +8,7 @@ void group_head_back_flush(){
   cleaning_program_running = true;
   pinMode (coffee_start_button, OUTPUT);                   // Sets coffee start button as output as relay is connected to start button power line                                                       
   int pause_period = bf_pause_duration * 1000;                   // BFrun will now equal BFpause times 100
-  static float prev_flush_time = 0;
+  static unsigned long prev_flush_time = 0;
 
   switch(current_back_flush_state){
 

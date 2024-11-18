@@ -106,7 +106,7 @@ MAX6675 boiler_thermocouple(thermoCLK, thermoCS, thermoDO);
 float boiler_temp_c = 0;
 
 void get_boiler_temp(){
-  static float boiler_temp_read_timer = 0;
+  static unsigned long boiler_temp_read_timer = 0;
 
   if(millis() - boiler_temp_read_timer < 1000){
     return;

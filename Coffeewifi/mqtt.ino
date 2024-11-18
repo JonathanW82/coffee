@@ -21,7 +21,7 @@ void maintain_mqtt_connection() {
     return;
   }
   
-  static long last_connection_attempt = 0;
+  static unsigned long last_connection_attempt = 0;
   static int mqtt_connection_attempt = 0;
   if (mqtt_client.connected()) {
     return;
