@@ -9,16 +9,15 @@ void boiler_decalcifier(){
   }
 
   cleaning_program_running = true;
-  pinMode (coffee_start_button, OUTPUT);                                    // sets coffee start button to an output as the relay that controlls cleaning programs is connected to the same line so it can cause program errors
 
-  static float decal_state_timer = 0;
+  static unsigned long decal_state_timer = 0;
 
   switch(current_boiler_decalcifier_state){
 
     case idle_dc:
       while(middle){
           middle = false;
-          if (millis() - decal_state_timer < 200){
+          if (millis() - decal_state_timer < 2000){
             return;
           }
         decal_state_timer = millis();
@@ -28,7 +27,7 @@ void boiler_decalcifier(){
     break;
 
     case flush_dc:
-      digitalWrite(pumpRelay, HIGH);
+      digitalWrite(pump_relay, HIGH);
      
       if(millis() - decal_state_timer < 30000) {
         return;
@@ -60,25 +59,24 @@ void boiler_decalcifier(){
     break;
 
     case pause_dc:
-      digitalWrite(pumpRelay, LOW);
+      digitalWrite(pump_relay, LOW);
     
       if (millis() - decal_state_timer < 300000) {
         return;
       }
       decal_state_timer = millis();
       reset_count_down();
-      count_down_reset = true;
       current_boiler_decalcifier_state = flush_dc;
       current_lcd_display_state = flush_dc_disp;
     break;
 
     case empty_dc:
-      digitalWrite(pumpRelay, LOW);
+      digitalWrite(pump_relay, LOW);
 
       while(middle)
       {
         middle = false;
-        if (millis() - decal_state_timer < 200){
+        if (millis() - decal_state_timer < 2000){
           return;
         }
         decal_state_timer = millis();
@@ -88,7 +86,7 @@ void boiler_decalcifier(){
     break;
 
     case end_dc:
-      digitalWrite(pumpRelay, LOW);
+      digitalWrite(pump_relay, LOW);
 
       if (millis() - decal_state_timer < 5000) {
         return;
@@ -97,7 +95,7 @@ void boiler_decalcifier(){
       cleaning_cycle = 0;
       run_boiler_decalcifier = false;
       current_boiler_decalcifier_state = idle_dc;
-      current_lcd_display_state = coffee_idle;
+      current_lcd_display_state = coffee_idle_disp;
       pinMode (coffee_start_button, INPUT_PULLUP); 
       cleaning_program_running = false;
     break;

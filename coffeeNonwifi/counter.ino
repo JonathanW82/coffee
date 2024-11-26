@@ -26,7 +26,7 @@ void count_down_timer(int min, int sec) {
       }
     }
 
-    minute = delta_min_cd;
+    minutes = delta_min_cd;
     seconds = delta_sec_cd;
   
   if (delta_min_cd == 0 && delta_sec_cd == 0) {
@@ -35,7 +35,7 @@ void count_down_timer(int min, int sec) {
 }
 
 void reset_count_down(){
-    minute = 0;
+    minutes = 0;
     seconds = 0;
     delta_min_cd = 0;
     delta_sec_cd = 0;
@@ -51,21 +51,21 @@ void count_up_timer() {
   }
     previous_time = millis();
 
-    current_sec++;
+    current_sec_cu++;
 
-    if (current_sec >= 60) {
-      current_min++;
-      current_sec = 0;
+    if (current_sec_cu >= 60) {
+      current_min_cu++;
+      current_sec_cu = 0;
     }
 
-    minute = current_min;
-    seconds = current_sec;
+    minutes = current_min_cu;
+    seconds = current_sec_cu;
 
 }
 
 void reset_count_up_timer(){
       current_min_cu = 0;
       current_sec_cu = 0;
-      minute = 0;
+      minutes = 0;
       seconds = 0;
 }

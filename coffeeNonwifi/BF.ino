@@ -5,10 +5,9 @@ void group_head_back_flush(){
     return;
   }
 
-  cleaning_program_running = true;
-  pinMode (coffee_start_button, OUTPUT);                   // Sets coffee start button as output as relay is connected to start button power line                                                       
+  cleaning_program_running = true;                                                    
   int pause_period = bf_pause_duration * 1000;                   // BFrun will now equal BFpause times 100
-  static float prev_flush_time = 0;
+  static unsigned long prev_flush_time = 0;
 
   switch(current_back_flush_state){
 
@@ -27,7 +26,8 @@ void group_head_back_flush(){
     break;
 
     case start_detergent_bf:
-        digitalWrite(pumpRelay, HIGH);
+        digitalWrite(pump_relay, HIGH);
+
         if (millis() - prev_flush_time < 4000) {
           return;
         }
@@ -37,7 +37,7 @@ void group_head_back_flush(){
     break;
 
     case pause_bf:
-        digitalWrite(pumpRelay, LOW);
+        digitalWrite(pump_relay, LOW);
    
         if(millis() - prev_flush_time < pause_period){
           return;
@@ -63,7 +63,7 @@ void group_head_back_flush(){
     break;
 
     case empty_filter_bf:
-      digitalWrite(pumpRelay, LOW);
+      digitalWrite(pump_relay, LOW);
       
       while (middle)
       {
@@ -78,7 +78,7 @@ void group_head_back_flush(){
     break;
 
     case water_flush_bf:
-        digitalWrite(pumpRelay, HIGH);
+        digitalWrite(pump_relay, HIGH);
 
         if (millis() - prev_flush_time < 4000) {
           return;
@@ -95,7 +95,7 @@ void group_head_back_flush(){
     break;
 
     case end_bf:
-        digitalWrite(pumpRelay, LOW);
+        digitalWrite(pump_relay, LOW);
      
         if (millis() - prev_flush_time < 8000) {
             return;
@@ -104,8 +104,7 @@ void group_head_back_flush(){
         run_back_flush = false;
         back_flush_cycle_counter = 0;
         current_back_flush_state = idle_bf;
-        current_lcd_display_state = coffee_idle;
-        pinMode (coffee_start_button, INPUT_PULLUP);  
+        current_lcd_display_state = coffee_idle_disp; 
         cleaning_program_running = false;
     break;
   }

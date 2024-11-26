@@ -1,19 +1,14 @@
-void readRotaryEncoder() {
-    static float pre_time = 0;
-    value += encoder->getValue();
-    int current = value / 4;
+void read_encoder_movement(){
+    static int pos = 0;
+    encoder.tick();
+    static int new_direction = 0;
 
-    if (current > last || current < last) {
-        last = current;
-        if (millis() - pre_time >= 50) {
-            pre_time = millis();
-            (current > last) ? down = true : up = true;
-        }
-    }
-}
-
-void timerIsr() {
-    encoder->service();
+    int newPos = encoder.getPosition();
+    if (pos != newPos) {
+        new_direction = static_cast<int>(encoder.getDirection());
+        pos = newPos;
+        (new_direction == 1) ? up = true : down = true;
+    } 
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ROTATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,11 +23,11 @@ void handleEncoderUp() {
     up = false;
 
     if (page == 1) {
-        menuitem--;
-        if (menuitem < 1) menuitem = 1; // Prevent underflow
-        lastMenuItem = menuitem;
-    } else if (page == 2 && enter == 1) {
-        switch (menuitem) {
+        menu_item--;
+        if (menu_item < 1) menu_item = 1; // Prevent underflow
+        last_menu_item = menu_item;
+    } else if (page == 2 && enter) {
+        switch (menu_item) {
             case 3:
                 coffee_boiler_target = adjustValue(coffee_boiler_target, -1, 0, 125);
                 break;
@@ -51,6 +46,18 @@ void handleEncoderUp() {
             case 10:
                 boiler_PID.D = adjustValue(boiler_PID.D, -1, -30, 30);
                 break;
+            case 11:
+                boiler_PID.D = adjustValue(pre_infusion_target_pressure, -0.1, 0, 9);
+                break;
+            case 12:
+                boiler_PID.D = adjustValue(pre_infusion_run_time, -1, 0, 10);
+                break;
+            case 13:
+                boiler_PID.D = adjustValue(pre_infusion_pause_time, -1, 0, 10);
+                break;
+            case 14:
+                boiler_PID.D = adjustValue(espresso_pull_time, -1, 0, 60);
+                break;
         }
         put_data_to_eeprom();
     }
@@ -61,11 +68,11 @@ void handleEncoderDown() {
     down = false;
 
     if (page == 1) {
-        menuitem++;
-        if (menuitem > 11) menuitem = 11; // Prevent overflow
-        lastMenuItem = menuitem;
-    } else if (page == 2 && enter == 1) {
-        switch (menuitem) {
+        menu_item++;
+        if (menu_item > 16) menu_item = 16; // Prevent overflow
+        last_menu_item = menu_item;
+    } else if (page == 2 && enter) {
+        switch (menu_item) {
             case 3:
                 coffee_boiler_target = adjustValue(coffee_boiler_target, 1, 0, 125);
                 break;
@@ -83,6 +90,18 @@ void handleEncoderDown() {
                 break;
             case 10:
                 boiler_PID.D = adjustValue(boiler_PID.D, 1, -30, 30);
+                break;
+            case 11:
+                boiler_PID.D = adjustValue(pre_infusion_target_pressure, 0.1, 0, 9);
+                break;
+            case 12:
+                boiler_PID.D = adjustValue(pre_infusion_run_time, 1, 0, 10);
+                break;
+            case 13:
+                boiler_PID.D = adjustValue(pre_infusion_pause_time, 1, 0, 10);
+                break;
+            case 14:
+                boiler_PID.D = adjustValue(espresso_pull_time, 1, 0, 60);
                 break;
         }
         put_data_to_eeprom();

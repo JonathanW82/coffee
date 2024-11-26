@@ -1,15 +1,32 @@
-void readEncoderButton() {
-    ClickEncoder::Button b = encoder->getButton();
-    if (b != ClickEncoder::Open) {
-        switch (b) {
-            case ClickEncoder::Clicked:
-                middle = true;
-                break;
-            case ClickEncoder::Held:
-                ButReset = true;
-                break;
-        }
+void read_encoder_button() {
+
+  static bool clicked = false;        
+  static unsigned long press_time = 0;
+  bool current_state = !digitalRead(encoder_switch_pin); 
+
+  if (current_state && !clicked) {
+    clicked = true;              
+    press_time = millis();        
+  }
+
+  if (!current_state && clicked) {
+    unsigned long duration = millis() - press_time;
+
+    if (duration >= 3000) {
+      clicked = false;  // long click and hold
+      middle = true; 
+    } 
+    else if (duration < 1500) {
+      if(current_lcd_display_state == coffee_idle_disp){
+        auto_active = true;
+        clicked = false; 
+      }
+      else{
+        clicked = false;
+        middle = true;   // single click
+      }
     }
+  }
 
     // Prevent other actions if a cleaning program is running
     if (cleaning_program_running) return;
@@ -18,40 +35,45 @@ void readEncoderButton() {
     if (middle) {
         middle = false;
 
-        if (page == 1 && menuitem == 1) {
-            menuEntered = true;
+        if (page == 1 && menu_item == 1) {
+            menu_entered = true;
             steam_active = false;
             current_lcd_display_state = idle;
-            lcd.clear();
-            menuitem = 2;
-            value = 0;
+            menu_item = 2;
             return;
         }
 
         // Define menu actions using a helper function
-        handleMenuNavigation(3);
-        handleMenuNavigation(4);
-        handleMenuNavigation(5);
-        handleMenuNavigation(6);
-        handleMenuNavigation(7);
-        handleMenuNavigation(8);
+        handle_menu_navigation(3);
+        handle_menu_navigation(4);
+        handle_menu_navigation(5);
+        handle_menu_navigation(6);
+        handle_menu_navigation(7);
+        handle_menu_navigation(8);
+        handle_menu_navigation(9);
+        handle_menu_navigation(10);
+        handle_menu_navigation(11);
+        handle_menu_navigation(12);
+        handle_menu_navigation(13);
+        handle_menu_navigation(14);
+        handle_menu_navigation(15);
 
-        // Special case for menuitem 9
-        if (page == 1 && menuitem == 11 && menuEntered) {
-            menuEntered = false;
+        // Special case for menu_item 15
+        if (page == 1 && menu_item == 16 && menu_entered) {
+            menu_entered = false;
         }
     }
 }
 
 // Helper function to handle repetitive menu navigation logic
-void handleMenuNavigation(int targetMenuItem) {
-    if (menuitem == targetMenuItem && menuEntered) {
+void handle_menu_navigation(int target_menu_item) {
+    if (menu_item == target_menu_item && menu_entered) {
         if (page == 1) {
             page++;
-            enter++;
-        } else if (page == 2 && enter == 1) {
+            enter = true;
+        } else if (page == 2 && enter) {
             page--;
-            enter--;
+            enter = false;
         }
     }
 }

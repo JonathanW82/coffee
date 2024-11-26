@@ -6,7 +6,7 @@ void main_lcd_display_status(){
     case idle:
     break;
 
-    case coffee_idle:
+    case coffee_idle_disp:
       lcd.setCursor(0, 0);
       lcd.print(F("Boiler "));
       lcd.print(F("    C= "));
@@ -31,19 +31,21 @@ void main_lcd_display_status(){
       }
       if (boiler_temp_c < coffee_boiler_target) {
         lcd.setCursor(0, 2);
-        lcd.print(F("  Machine HEATING   "));
+        lcd.print(F("Machine HEATING     "));
         lcd.setCursor(0, 3);
-        lcd.print(F("    Please Wait!    "));
+        lcd.print(F("                    "));
       }
       else {
-        lcd.setCursor(0, 3);
-        lcd.print (F("Machine READY !!    "));
         lcd.setCursor(0, 2);
-        lcd.print (F("                    "));
+        lcd.print (F("Machine READY !!   "));
+        lcd.setCursor(0, 3);
+        lcd.print(F("Press for auto-start"));
       }
     break;
 
-    case run_espresso:
+    //##################################### make screen for auto mode #####################################
+
+    case run_espresso_disp:
         lcd.setCursor(0, 0);
         lcd.print(F("Making Espresso     "));
         lcd.setCursor(0, 1);
@@ -52,24 +54,48 @@ void main_lcd_display_status(){
         lcd.print(F("  "));
         lcd.setCursor(8, 1);
         count_up_timer();
+
       if (seconds < 10) lcd.print (F("0"));
+
         lcd.print(seconds);
         lcd.setCursor(10, 1);
         lcd.print(F("          "));
         lcd.setCursor(0, 2);
         lcd.print(F("Boiler "));
-        lcd.print(F("     C="));;
+        lcd.print(F("     C="));
+
+      if(boiler_temp_c < 100){
+          lcd.setCursor(19, 2);
+          lcd.print(F(" "));
+      }
+
         lcd.print(boiler_temp_c);
         lcd.setCursor(0, 3);
-        lcd.print(F("Making Espresso     "));
-
-      if(boiler_temp_c <100){
-        lcd.setCursor(19, 2);
-        lcd.print(F(" "));
-      }
     break;
 
-    case run_steam:
+    case pre_infuse_disp:
+        lcd.setCursor(0, 0);
+        lcd.print(F("Starting PreInfusion"));
+        lcd.setCursor(0, 1);
+        lcd.print(F("                    "));
+        lcd.setCursor(0, 2);
+        lcd.print(F("Please wait!        "));
+        lcd.setCursor(0, 3);
+        lcd.print(F("                    "));
+    break;
+
+    case auto_coffee_finish_disp:
+        lcd.setCursor(0, 0);
+        lcd.print(F("Extraction finished "));
+        lcd.setCursor(0, 1);
+        lcd.print(F("                    "));
+        lcd.setCursor(0, 2);
+        lcd.print(F("Please wait!        "));
+        lcd.setCursor(0, 3);
+        lcd.print(F("                    "));
+    break;
+
+    case run_steam_disp:
       lcd.setCursor(0, 0);
       lcd.print(F("Steaming in Progress"));
       lcd.setCursor(0, 1);
@@ -90,9 +116,9 @@ void main_lcd_display_status(){
       
       if (boiler_temp_c < steam_boiler_target) {
         lcd.setCursor(0, 2);
-        lcd.print(F("  Machine HEATING   "));
+        lcd.print(F("Machine HEATING     "));
         lcd.setCursor(0, 3);
-        lcd.print(F("    Please Wait!    "));
+        lcd.print(F("Please Wait!        "));
       }
       else {
         lcd.setCursor(0, 3);
@@ -102,7 +128,7 @@ void main_lcd_display_status(){
       }
     break;
 
-    case run_hot_water:
+    case run_hot_water_disp:
       lcd.setCursor(0, 0);
       lcd.print(F("DISPENSE HOT WATER  "));
       lcd.setCursor(0, 1);
@@ -149,7 +175,7 @@ void main_lcd_display_status(){
       lcd.print(F("      "));
       lcd.setCursor(6, 1);
       count_down_timer(4, 59); // set timer 5 mins
-      lcd.print(minute);
+      lcd.print(minutes);
       lcd.print(":");
       if (seconds < 10) {
         Serial.print("0");
